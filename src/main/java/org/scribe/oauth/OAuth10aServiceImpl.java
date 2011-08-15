@@ -68,6 +68,24 @@ public class OAuth10aServiceImpl implements OAuthService
   }
 
   /**
+   * <code>refreshCode</code> in this context is the oauth_session_handle returned from <code>getAccessToken</code>
+   *
+   * @param accessToken
+   * @param refreshCode
+   * @return
+   */
+  @Override
+  public Token refreshAccessToken(Token accessToken, String refreshCode) {
+      final OAuthRequest request = new OAuthRequest(api.getAccessTokenVerb(), api.getAccessTokenEndpoint());
+      request.addOAuthParameter(OAuthConstants.TOKEN, accessToken.getToken());
+      request.addOAuthParameter(OAuthConstants.SESSION_HANDLE, refreshCode);
+      addOAuthParams(request, accessToken);
+      addSignature(request);
+      final Response response = request.send();
+      return api.getAccessTokenExtractor().extract(response.getBody());
+  }
+
+    /**
    * {@inheritDoc}
    */
   public void signRequest(Token token, OAuthRequest request)

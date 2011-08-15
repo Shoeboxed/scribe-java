@@ -45,5 +45,11 @@ public class OAuthConstants
   public static final String CLIENT_SECRET = "client_secret";
   public static final String REDIRECT_URI = "redirect_uri";
   public static final String CODE = "code";
-  
+
+  // OAuth Session 1.0 Draft 1
+  // http://oauth.googlecode.com/svn/spec/ext/session/1.0/drafts/1/spec.html
+  public static final String SESSION_HANDLE = "oauth_session_handle";
+  public static final String AUTHORIZATION_EXPIRES = "oauth_authorization_expires_in";
+  public static final String EXPIRES = "oauth_expires_in";
+
 }

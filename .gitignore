@@ -8,3 +8,7 @@
 # Binaries
 
 target
+
+# IntelliJ
+.idea
+*.iml

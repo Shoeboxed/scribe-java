@@ -46,6 +46,18 @@ public class OAuth20ServiceImpl implements OAuthService
   }
 
   /**
+   * <code>refreshCode</code> in this context is the refresh_token returned from <code>getAccessToken</code>
+   *
+   * @param accessToken
+   * @param refreshCode
+   * @return
+   */
+  @Override
+  public Token refreshAccessToken(Token accessToken, String refreshCode) {
+    throw new UnsupportedOperationException("TODO at a later time");
+  }
+
+  /**
    * {@inheritDoc}
    */
   public String getVersion()

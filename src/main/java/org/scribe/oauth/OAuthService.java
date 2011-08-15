@@ -28,6 +28,15 @@ public interface OAuthService
   public Token getAccessToken(Token requestToken, Verifier verifier);
 
   /**
+   * Refresh the access token
+   *
+   * @param accessToken
+   * @param refreshCode
+   * @return
+   */
+  public Token refreshAccessToken(Token accessToken, String refreshCode);
+
+  /**
    * Signs am OAuth request
    * 
    * @param accessToken access token (obtained previously)
